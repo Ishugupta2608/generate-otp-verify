@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>verification</title>
+    <style>
+        *{
+            background-color: rgb(22, 22, 61);
+        }
+        .container {
+            border-radius: 25px;
+            background-color: white;
+            margin-left: 45%;
+            margin-top: 15%;
+            margin-right: 35%;
+            height: 250px;
+            overflow: hidden;
+
+        }
+        h2 , p {
+            background-color: white;
+            text-align: center;
+            font-size: large;
+            
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="row-gap: 4px;">Enter OTP</h2>
+        
+        <p>Please enter the 4-digit OTP</p>
+        <br>
+
+        <input type="text" id="digit1" maxlength="1" inputmode="numeric" style="height: 30px;background-color: white;width: 30px; margin-left: 7%; margin-bottom: 5%; font-size: x-large; margin-right: 8px;border-radius: 10px;text-align: center;">
+
+        <input type="text" id="digit2" maxlength="1" inputmode="numeric" style="height: 30px;background-color: white;width: 30px; margin-left: 7%; margin-bottom: 5%; font-size: x-large;margin-right: 8px;border-radius: 10px;text-align: center;">
+
+        <input type="text" id="digit3" maxlength="1" inputmode="numeric" style="height: 30px;background-color: white;width: 30px; margin-left: 7%; margin-bottom: 5%; font-size: x-large;margin-right: 8px;border-radius: 10px;text-align: center;">
+
+        <input type="text" id="digit4" maxlength="1" inputmode="numeric" style="height: 30px;background-color: white;width: 30px; margin-left: 7%; margin-bottom: 5%; font-size: x-large;margin-right: 8px;border-radius: 10px;text-align: center;">
+
+        <br>
+        <br>
+        <input type="button" value="verify OTP" style="background-color: white; margin-left: 100px; margin-bottom: 5%;margin-right: 8px;border-radius: 10px;height: 40px;" onclick="verify()">
+
+
+    </div>
+    <script>
+       function verify(){
+       let digit1 = document.getElementById("digit1").value;
+       let digit2 = document.getElementById("digit2").value;
+       let digit3 = document.getElementById("digit3").value;
+       let digit4 = document.getElementById("digit4").value;
+
+       let enteredOTP = digit1 + digit2 + digit3 + digit4;
+        let correctOTP = localStorage.getItem("otp");
+        if (enteredOTP == correctOTP){
+            alert ("OTP verified successfully");
+        }
+        else{
+            alert ("wrong OTP");
+            console.log("Wrong OTP");
+        }
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP verification</title>
+    <style>
+        *{
+            background-color: rgb(20, 20, 87);
+        }
+        input{
+          
+            background-color: white;
+            border-radius: 8px;
+            font-size: 30px;
+            color: black;
+        }
+        .otp{
+            margin-left: 45%;
+            margin-top: 25%;
+        }
+        .otp input{
+            height: 70px;
+            padding: 0 14px;
+            font-size: 16px;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="otp">
+        <input type="button" value="Get OTP" onclick="nextStep() ">
+
+    </div>
+    <script>
+        function nextStep() {
+            let otp = Math.floor(1000 + Math.random() * 9000);
+            alert ("your OTP is :" + otp);
+            localStorage.setItem("otp" , otp)
+            window.location.href = "main.html"
+        }
+    </script>
+</body>
+</html>
